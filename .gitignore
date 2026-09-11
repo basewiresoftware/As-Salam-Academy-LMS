@@ -427,3 +427,11 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Python virtual environment
+env/
+venv/
+.venv/
+
+# Local database
+*.sqlite3
