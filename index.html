@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>As-Salam Qur'an Academy</title>
+  <meta name="description" content="Qur'an, Youth Program and Islamic Studies classes at Masjid As-Salam.">
+  <meta name="theme-color" content="#0B2559">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%2312439E' stroke='%23fff' stroke-width='4'/%3E%3Crect x='48.5' y='25.5' width='3' height='10' rx='1.5' fill='%23E6BE63'/%3E%3Cpath d='M28 65.5V57.5A22 22 0 0 1 72 57.5V65.5Z' fill='%23C8952B'/%3E%3Crect x='23' y='67.5' width='54' height='7' rx='2' fill='%23E6BE63'/%3E%3C/svg%3E">
+  <style>
+    /* Palette and type mirror frontend/frontend/src/constants/theme.js. */
+    :root {
+      --navy: #0C2A6B;
+      --primary: #12439E;
+      --gold: #C8952B;
+      --gold-light: #E6BE63;
+      --panel: #0B2559;
+      --panel-soft: #153A7C;
+      --panel-line: rgba(255, 255, 255, 0.18);
+      --ink: #0B1E3F;
+      --text-muted: #5B6579;
+      --on-primary: #FFFFFF;
+      --on-primary-muted: #C3D0EC;
+      --primary-tint: #E7EDFA;
+      --hairline: #E3E8F2;
+      --surface: #FFFFFF;
+      --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+      --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--surface);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ---- Main column ---- */
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 40px 56px 32px;
+    }
+
+    .main-inner {
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .wordmark svg { width: 30px; height: 30px; flex: none; }
+
+    .hero { padding-top: 64px; }
+
+    .overline {
+      margin: 0 0 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 42px;
+      line-height: 46px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+    }
+
+    .lede {
+      margin: 12px 0 0;
+      max-width: 420px;
+      font-size: 15px;
+      line-height: 22px;
+      color: var(--text-muted);
+    }
+
+    section { margin-top: 48px; }
+
+    .programs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .programs li {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .programs .index {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      padding-top: 4px;
+    }
+
+    .programs h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .programs p {
+      margin: 2px 0 0;
+      font-size: 15px;
+      line-height: 22px;
+      color: var(--text-muted);
+    }
+
+    .portal-body {
+      margin: 0;
+      font-size: 15px;
+      line-height: 22px;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--primary-tint);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .status::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .meta {
+      margin-top: auto;
+      padding-top: 48px;
+    }
+
+    .meta p {
+      margin: 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--text-muted);
+    }
+
+    /* ---- Navy crest panel ---- */
+
+    .panel {
+      width: 30%;
+      min-width: 280px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      color: var(--on-primary);
+      padding: 40px 24px 32px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 4px;
+    }
+
+    .kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--on-primary-muted);
+    }
+
+    .plate {
+      flex: 1;
+      min-height: 160px;
+      margin: 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border: 1px solid var(--panel-line);
+      border-radius: 28px;
+      background: var(--panel-soft);
+    }
+
+    .plate svg { width: 120px; height: 120px; }
+
+    .notice {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .caption {
+      margin: 10px 0 0;
+      font-size: 15px;
+      line-height: 22px;
+      color: var(--on-primary-muted);
+    }
+
+    .band-wordmark { display: none; color: var(--on-primary); }
+
+    /* ---- Narrow: the panel folds into a band above the content ---- */
+
+    @media (max-width: 899px) {
+      .page { flex-direction: column; }
+
+      .panel {
+        order: -1;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        padding: 24px 24px 32px;
+        gap: 24px;
+      }
+
+      .panel-head, .plate { display: none; }
+      .band-wordmark { display: flex; }
+
+      .main { padding: 32px 24px; }
+      .main .wordmark { display: none; }
+
+      .hero { padding-top: 0; }
+
+      .hero::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 24px;
+      }
+
+      h1 { font-size: 29px; line-height: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stand-in for the Masjid As-Salam seal, same geometry as BrandMark.js. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="brand-mark" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="#12439E" stroke="#FFFFFF" stroke-width="4"/>
+      <rect x="48.5" y="25.5" width="3" height="10" rx="1.5" fill="#E6BE63"/>
+      <path d="M28 65.5V57.5A22 22 0 0 1 72 57.5V65.5Z" fill="#C8952B"/>
+      <rect x="23" y="67.5" width="54" height="7" rx="2" fill="#E6BE63"/>
+    </symbol>
+  </svg>
+
+  <div class="page">
+    <main class="main">
+      <div class="main-inner">
+        <div class="wordmark">
+          <svg aria-hidden="true"><use href="#brand-mark"/></svg>
+          As-Salam Qur'an Academy
+        </div>
+
+        <header class="hero">
+          <p class="overline">Masjid As-Salam</p>
+          <h1>Learning the Qur'an,<br>together.</h1>
+          <p class="lede">
+            Qur'an, youth and Islamic studies classes for the children of our
+            community, taught at <span style="white-space: nowrap">Masjid As-Salam</span>.
+          </p>
+        </header>
+
+        <section aria-labelledby="programs-title">
+          <p class="overline" id="programs-title">What we teach</p>
+          <ul class="programs">
+            <li>
+              <span class="index">01</span>
+              <div>
+                <h3>Qur'an</h3>
+                <p>Recitation and memorisation, including a dedicated Hifz track.</p>
+              </div>
+            </li>
+            <li>
+              <span class="index">02</span>
+              <div>
+                <h3>Youth Program</h3>
+                <p>Youth group sessions for the younger members of the community.</p>
+              </div>
+            </li>
+            <li>
+              <span class="index">03</span>
+              <div>
+                <h3>Islamic Studies</h3>
+                <p>Classes in the beliefs and practice of Islam.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="portal" aria-labelledby="portal-title">
+          <p class="overline" id="portal-title">The family portal</p>
+          <p class="portal-body">
+            One account holds every child — enrolment, attendance and fees stay
+            in the same place, term after term. Teachers see their classes and
+            enrolled students alongside.
+          </p>
+          <span class="status">In testing</span>
+        </section>
+
+        <footer class="meta">
+          <p>As-Salam Qur'an Academy · Masjid As-Salam</p>
+        </footer>
+      </div>
+    </main>
+
+    <aside class="panel">
+      <div class="wordmark band-wordmark">
+        <svg aria-hidden="true"><use href="#brand-mark"/></svg>
+        As-Salam Qur'an Academy
+      </div>
+
+      <div class="panel-head">
+        <span class="kicker">The family portal</span>
+        <span class="kicker">Test version</span>
+      </div>
+
+      <div class="plate">
+        <svg aria-hidden="true"><use href="#brand-mark"/></svg>
+        <span class="kicker">Masjid As-Salam</span>
+      </div>
+
+      <div>
+        <p class="notice">The family portal is in testing.</p>
+        <p class="caption">
+          Registering children, enrolling in classes and paying fees will move
+          online when it launches.
+        </p>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
